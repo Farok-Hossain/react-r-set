@@ -13,7 +13,7 @@ const ProfilesPage = () => {
             to={`/profiles/${profile}`}
             key={profile}
             className={({ isActive }) => {
-              return isActive ? "text-green-700 text-2xl" : "";
+              return isActive ? "text-orange-700 text-2xl" : "";
             }}
           >
             Profile{profile}
