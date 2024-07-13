@@ -4,11 +4,20 @@ const ReactHookForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    setError,
+    formState: { errors, isSubmitting },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log(data);
+      throw new Error();
+    } catch (error) {
+      setError("root", {
+        message: "This email is already taken",
+      });
+    }
   };
   return (
     <div>
@@ -47,9 +56,16 @@ const ReactHookForm = () => {
         {errors.password && (
           <div className="text-red-600">{errors.password.message}</div>
         )}
-        <button className="btn btn-secondary" type="submit">
-          Submit
+        <button
+          disabled={isSubmitting}
+          className="btn btn-secondary"
+          type="submit"
+        >
+          {isSubmitting ? "Loading..." : "Submit"}
         </button>
+        {errors.root && (
+          <div className="text-red-600">{errors.root.message}</div>
+        )}
       </form>
     </div>
   );
