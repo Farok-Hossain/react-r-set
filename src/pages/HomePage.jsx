@@ -1,4 +1,5 @@
 import ContactForm from "../components/Contact/ContactForm";
+import EmailForm from "../components/Contact/EmailForm";
 import ExtraContactForm from "../components/Contact/ExtraContactForm";
 import ReactHookForm from "../components/Contact/ReactHookForm";
 
@@ -9,6 +10,7 @@ const HomePage = () => {
       <ContactForm />
       <ExtraContactForm />
       <ReactHookForm />
+      <EmailForm />
     </div>
   );
 };

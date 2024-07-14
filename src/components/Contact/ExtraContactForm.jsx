@@ -10,7 +10,7 @@ const ExtraContactForm = () => {
     console.log(name, email, message);
   };
   return (
-    <div className="mt-20">
+    <div className="mt-20 ml-6">
       <form action="" onSubmit={handleSubmitt}>
         <input
           className="border border-blue-950 mr-3"

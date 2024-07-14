@@ -25,7 +25,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="text-center ">
+    <div className="text-center ml-6">
       <form className="flex flex-col w-1/2" onSubmit={handleSubmit}>
         <input
           className=" border border-black mb-3"

@@ -20,7 +20,7 @@ const ReactHookForm = () => {
     }
   };
   return (
-    <div>
+    <div className="ml-6">
       <h1 className="mt-20 mb-2 text-3xl">React Hook Form</h1>
       <form action="" onSubmit={handleSubmit(onSubmit)}>
         <input
